@@ -1,5 +1,6 @@
-import helloWorld from './hellw-world';
-import addImage from './image-add';
+import Button from './components/button';
+// import addImage from './image-add';
 
-helloWorld();
-addImage();
+const btn = new Button();
+btn.render();
+// addImage();

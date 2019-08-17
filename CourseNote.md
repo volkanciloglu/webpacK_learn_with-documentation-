@@ -125,3 +125,86 @@ helloWorld();
 ```
 
 - `$ npm run build`
+
+## Lesson 3 (loaders - css-loader)
+
+- `$ npm install style-loader css-loader` install loader css&style
+
+- remove file _hello-world.js_
+
+- `$ mkdir src/components` create component folder
+
+- `$ touch src/components/button.js src/components/button.css` create js and css file
+
+- _src/components/button.js_ updated code
+
+```javascript
+import "./button.css";
+
+class Buttons {
+  render() {
+    const button = document.createElement("button");
+
+    button.classList.add("button");
+    button.innerHTML = "Add Text";
+
+    button.addEventListener("click", () => {
+      const text = document.createElement("p");
+
+      text.classList.add("text");
+      text.innerHTML = "This is Text";
+
+      document.body.appendChild(text);
+    });
+    document.body.appendChild(button);
+  }
+}
+
+export default Buttons;
+```
+
+- _src/components/button.css_ updated code
+
+```css
+.button {
+  background: #444;
+  color: #fff;
+  padding: 10px 30px;
+  display: inline-block;
+  border: none;
+  outline: none;
+  background-repeat: 2px;
+  cursor: pointer;
+}
+
+.text {
+  color: rgb(54, 161, 69);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  margin: 0;
+}
+```
+
+- _src/index.js_ added code
+
+```javascript
+import Button from "./components/button";
+const btn = new Button();
+
+btn.render();
+```
+
+- _webpack.config.js_ added css rules
+
+```json
+module>rule:[
+  ...
+  {
+    "test": /\.css$/,
+    "use": ["style-loader", "css-loader"]
+  }
+  ...
+]
+```
+
+- `$ npm run build` conrolled index.html file and clicked button
