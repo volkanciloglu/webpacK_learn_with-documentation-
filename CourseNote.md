@@ -208,3 +208,43 @@ module>rule:[
 ```
 
 - `$ npm run build` conrolled index.html file and clicked button
+
+## Lesson 4 (loaders - sass-loader)
+
+- `$ npm install sass-loader node-sass --save` install sass loader
+
+- _src/components/button.css_ rename _button.scss_
+
+- _button.scss_ update code
+
+```scss
+$btn-color: #999;
+$text-color: blue;
+
+.button {
+  ...background: $btn-color; // added
+}
+
+.text {
+  ...color: $text-color; // added
+}
+```
+
+- _src/components/button.js_ change import css file to scss file
+
+```javascript
+import "./button.css"; // remove
+import "./button.scss"; // added
+```
+
+- _webpack.config.js_ added scss-loader rule
+
+```javascript
+module.exports = {
+  module: {
+    rules: [{
+      test: /\.scss$/,
+      use: ["style-loader","css-loader","sass-loader"]
+  }]
+}
+```

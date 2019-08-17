@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // import addImage from './image-add';
 
-const btn = new _components_button__WEBPACK_IMPORTED_MODULE_0__["default"];
+const btn = new _components_button__WEBPACK_IMPORTED_MODULE_0__["default"]();
 btn.render();
 // addImage();
 
@@ -104,11 +104,11 @@ btn.render();
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _button_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _button_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_button_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _button_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _button_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_button_scss__WEBPACK_IMPORTED_MODULE_0__);
 
 
-class helloWorldButton {
+class Buttons {
   render() {
     const button = document.createElement("button");
     button.classList.add("button");
@@ -123,7 +123,7 @@ class helloWorldButton {
   }
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (helloWorldButton);
+/* harmony default export */ __webpack_exports__["default"] = (Buttons);
 
 /***/ }),
 /* 2 */
@@ -153,7 +153,7 @@ if (content.locals) {
 
 exports = module.exports = __webpack_require__(4)(false);
 // Module
-exports.push([module.i, ".button {\r\n  background: #444;\r\n  color: #fff;\r\n  padding: 10px 30px;\r\n  display: inline-block;\r\n  border: none;\r\n  outline: none;\r\n  background-repeat: 2px;\r\n  cursor: pointer;\r\n}\r\n\r\n.text {\r\n  color: rgb(54, 161, 69);\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  padding: 10px;\r\n  margin: 0;\r\n}", ""]);
+exports.push([module.i, ".button {\n  background: #999;\n  color: #333;\n  padding: 10px 30px;\n  display: inline-block;\n  border: none;\n  outline: none;\n  background-repeat: 2px;\n  cursor: pointer; }\n\n.text {\n  color: blue;\n  font-family: Arial, Helvetica, sans-serif;\n  padding: 10px;\n  margin: 0; }\n", ""]);
 
 
 /***/ }),

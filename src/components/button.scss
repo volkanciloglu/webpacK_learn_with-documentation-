@@ -1,6 +1,9 @@
+$btn-color:#999;
+$text-color:blue;
+
 .button {
-  background: #444;
-  color: #fff;
+  background: $btn-color;
+  color: #333;
   padding: 10px 30px;
   display: inline-block;
   border: none;
@@ -10,7 +13,7 @@
 }
 
 .text {
-  color: rgb(54, 161, 69);
+  color: $text-color;
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
   margin: 0;
