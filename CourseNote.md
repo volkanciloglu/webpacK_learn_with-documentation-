@@ -311,3 +311,64 @@ module.exports = {
 ```
 
 - `$ npm run build` see _dist/bundle.js_ size 17kb switch 6kb
+
+## Lesson 7 (Extracting CSS into a separate Bundle)
+
+- `$ npm install mini-css-extract-plugin --save-dev` install extract css plugin
+
+- _webpack.config.js_ updated code add plugin
+
+```javascript
+const MiniCssExtractPlugin = require("mini-css-extract-plugin") // added
+module.exports = {
+  ...
+  plugins: [
+    ...
+    new MiniCssExtractPlugin({
+      filename: "styles.css"
+    })
+  ]
+}
+```
+
+- `$ touch src/components/heading.js src/components/heading.scss` create new component files
+
+- _heading.js_ ;
+
+```javascript
+import "./heading.scss"; // import scss file
+
+class Heading {
+  render() {
+    const h = document.createElement("h1");
+    h.innerHTML = "WEBPACK awesome";
+    document.body.appendChild(h);
+  }
+}
+
+export default Heading;
+```
+
+- _heading.scss_ ;
+
+```scss
+$colored: #f85;
+
+h1 {
+  color: $colored;
+}
+```
+
+- _index.js_ imported heading.js files
+
+```javascript
+import Button from "./components/button";
+import Heading from "./components/heading"; // added
+
+const hd = new Heading(); // added
+const btn = new Button();
+hd.render(); // added
+btn.render();
+```
+
+- `$ npm run build` see all style files collected in a single file.
