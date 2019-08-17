@@ -293,3 +293,21 @@ module.exports = {
 ```
 
 - `$ npm run build` check page
+
+## Lesson 6 (Webpack plugins added)
+
+- `$ npm install terser-webpack-plugin --save-dev` webpack plugin install
+
+- _webpack.config.js_ update codes
+
+```javascript
+const TerserPlugin = require("terser-webpack-plugin"); // added
+module.exports = {
+  ...
+  plugins: [
+    new TerserPlugin()
+  ]
+}
+```
+
+- `$ npm run build` see _dist/bundle.js_ size 17kb switch 6kb
