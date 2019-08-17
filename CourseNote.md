@@ -248,3 +248,48 @@ module.exports = {
   }]
 }
 ```
+
+## Lesson 5 (loaders - babel-loader with use plugins)
+
+- `$ npm install @babel/core babel-loader @babel/preset-env @babel/plugin-proposal-class-properties --save-dev` install packages babel
+
+- _src/components/button.js_ update code
+
+```javascript
+class Buttons {
+  buttonClass = "button" // added
+  textClass = "text" // added
+  render() {
+    ...
+    button.classList.add(this.buttonClass); // change
+    ...
+    button.addEventListener("click", () => {
+      ...
+      text.classList.add(this.textClass); // change
+      ...
+    });
+  }
+}
+```
+
+- _webpack.config.js_ added js rule
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      ...
+      {
+      test: /\.js$/,
+      use: {
+        loader: "babel-loader",
+        options: {
+          presets: ["@babel/env"],
+          plugins: ["@babel/plugin-proposal-class-properties"]
+        }
+      }
+    }]
+}
+```
+
+- `$ npm run build` check page

@@ -91,12 +91,10 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+ // import addImage from './image-add';
 
-// import addImage from './image-add';
-
-const btn = new _components_button__WEBPACK_IMPORTED_MODULE_0__["default"]();
-btn.render();
-// addImage();
+var btn = new _components_button__WEBPACK_IMPORTED_MODULE_0__["default"]();
+btn.render(); // addImage();
 
 /***/ }),
 /* 1 */
@@ -106,22 +104,47 @@ btn.render();
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _button_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _button_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_button_scss__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-class Buttons {
-  render() {
-    const button = document.createElement("button");
-    button.classList.add("button");
-    button.innerHTML = "Add Text";
-    button.addEventListener('click', () => {
-      const text = document.createElement('p');
-      text.classList.add('text');
-      text.innerHTML = "This is Text";
-      document.body.appendChild(text);
-    });
-    document.body.appendChild(button);
+
+var Buttons =
+/*#__PURE__*/
+function () {
+  function Buttons() {
+    _classCallCheck(this, Buttons);
+
+    _defineProperty(this, "buttonClass", "button");
+
+    _defineProperty(this, "textClass", "text");
   }
-}
+
+  _createClass(Buttons, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var button = document.createElement("button");
+      button.classList.add(this.buttonClass);
+      button.innerHTML = "Add Text";
+      button.addEventListener("click", function () {
+        var text = document.createElement('p');
+        text.classList.add(_this.textClass);
+        text.innerHTML = "This is Text";
+        document.body.appendChild(text);
+      });
+      document.body.appendChild(button);
+    }
+  }]);
+
+  return Buttons;
+}();
 
 /* harmony default export */ __webpack_exports__["default"] = (Buttons);
 
@@ -162,13 +185,13 @@ exports.push([module.i, ".button {\n  background: #999;\n  color: #333;\n  paddi
 
 "use strict";
 
-
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
 // css base code, injected by the css-loader
 // eslint-disable-next-line func-names
+
 module.exports = function (useSourceMap) {
   var list = []; // return the list of modules as css string
 
