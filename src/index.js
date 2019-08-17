@@ -6,4 +6,6 @@ const hd = new Heading();
 const btn = new Button();
 hd.render();
 btn.render();
+
+const ten = 10;
 // addImage();

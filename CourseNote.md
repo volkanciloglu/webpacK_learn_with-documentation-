@@ -372,3 +372,40 @@ btn.render();
 ```
 
 - `$ npm run build` see all style files collected in a single file.
+
+## Lesson 8 (Browser caching and clean dist folder generated bundle)
+
+- _webpack.config.js_ updated code
+
+```javascript
+module.exports = {
+  output: {
+    filename: "bundle[contenthash].js" // change
+  },
+  plugins:{
+    new MiniCssExtractPlugin({
+      filename: "styles[contenthash].css" // change
+    })
+  }
+};
+```
+
+- `$ npm run build` see dist folder. added new files md5 name
+
+> **NOTE** this configuration will add new files to the "dist" folder each time the "npm build run" command is executed. This will cause confusion. Clean up the dist folder before running the command
+
+- `$ npm install clean-webpack-plugin --save-dev`
+
+- _webpack.config.js_ update code
+
+```javascript
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');; // added
+module.exports = {
+  ...
+  plugins: [
+    new CleanWebpack()
+  ]
+}
+```
+
+- `$ npm run build`
