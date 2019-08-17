@@ -68,3 +68,60 @@ export default helloworld;
 ```
 
 - `$ npm run build` start builder
+
+## Lesson 2 (Loaders - file-loader)
+
+- `$ npm install file-loader --save-dev` install file-loader
+
+- `$ mkdir src/images` create folder images
+
+- `$ touch src/image-add.js` create file js
+
+- `$ wget https://image.freepik.com/free-photo/kiwi-fruit-slice_44865-126.jpg -O src/images/kiwi.jpg` download images folder with change image name file
+
+- _webpack.config.js_ added code
+
+```javascript
+module.exports = {
+  output: {
+    publicPath: "dist/"
+  },
+  module: {
+    rules: [{
+      test: /\.(png|jpg)$/,
+      use: {
+        loader: "file-loader"
+    }
+  }]
+}
+```
+
+- \_image-add.js update code
+
+```javascript
+import kiwi from "./images/kiwi.jpg";
+
+const addImage = () => {
+  const img = document.createElement("img");
+  img.alt = "Kivi image";
+  img.src = kiwi;
+  img.width = 300;
+
+  const body = document.querySelector("body");
+  body.appendChild(img);
+};
+
+export default addImage;
+```
+
+- _index.js_ update code
+
+```javascript
+import helloWorld from './hellw-world';
++ import addImage from './image-add';
+
+helloWorld();
++ addImage();
+```
+
+- `$ npm run build`
