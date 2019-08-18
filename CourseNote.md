@@ -12,7 +12,7 @@
 
 - `$ touch webpack.config.js` webpack custom configuration file
 
-- _webpack.config.js_ updated code :
+- "_webpack.config.js_" updated code :
 
 ```javascript
 const path = resolve("path");
@@ -27,7 +27,7 @@ module.exports = {
 };
 ```
 
-- _src/index.js_ updated code ;
+- "_src/index.js_" updated code ;
 
 ```javascript
 import helloworld from "./src/hellw-world";
@@ -35,7 +35,7 @@ import helloworld from "./src/hellw-world";
 helloworld();
 ```
 
--_src/hello-world.js_ updated code ;
+-_src/hello-world.js_" updated code ;
 
 ```javascript
 const helloworld = () => {
@@ -45,7 +45,7 @@ const helloworld = () => {
 export default helloworld;
 ```
 
-- _index.html_ updated code ;
+- "_index.html_" updated code ;
 
 ```html
 ...
@@ -54,7 +54,7 @@ export default helloworld;
 </body>
 ```
 
-- _package.json_ added scripts
+- "_package.json_" added scripts
 
 ```json
 {
@@ -79,7 +79,7 @@ export default helloworld;
 
 - `$ wget https://image.freepik.com/free-photo/kiwi-fruit-slice_44865-126.jpg -O src/images/kiwi.jpg` download images folder with change image name file
 
-- _webpack.config.js_ added code
+- "_webpack.config.js_" added code
 
 ```javascript
 module.exports = {
@@ -114,7 +114,7 @@ const addImage = () => {
 export default addImage;
 ```
 
-- _index.js_ update code
+- "_index.js_" update code
 
 ```javascript
 import helloWorld from './hellw-world';
@@ -130,13 +130,13 @@ helloWorld();
 
 - `$ npm install style-loader css-loader` install loader css&style
 
-- remove file _hello-world.js_
+- remove file "_hello-world.js_
 
 - `$ mkdir src/components` create component folder
 
 - `$ touch src/components/button.js src/components/button.css` create js and css file
 
-- _src/components/button.js_ updated code
+- "_src/components/button.js_" updated code
 
 ```javascript
 import "./button.css";
@@ -163,7 +163,7 @@ class Buttons {
 export default Buttons;
 ```
 
-- _src/components/button.css_ updated code
+- "_src/components/button.css_" updated code
 
 ```css
 .button {
@@ -185,7 +185,7 @@ export default Buttons;
 }
 ```
 
-- _src/index.js_ added code
+- "_src/index.js_" added code
 
 ```javascript
 import Button from "./components/button";
@@ -194,7 +194,7 @@ const btn = new Button();
 btn.render();
 ```
 
-- _webpack.config.js_ added css rules
+- "_webpack.config.js_" added css rules
 
 ```json
 module>rule:[
@@ -213,9 +213,9 @@ module>rule:[
 
 - `$ npm install sass-loader node-sass --save` install sass loader
 
-- _src/components/button.css_ rename _button.scss_
+- "_src/components/button.css_" rename "_button.scss_
 
-- _button.scss_ update code
+- "_button.scss_" update code
 
 ```scss
 $btn-color: #999;
@@ -230,14 +230,14 @@ $text-color: blue;
 }
 ```
 
-- _src/components/button.js_ change import css file to scss file
+- "_src/components/button.js_" change import css file to scss file
 
 ```javascript
 import "./button.css"; // remove
 import "./button.scss"; // added
 ```
 
-- _webpack.config.js_ added scss-loader rule
+- "_webpack.config.js_" added scss-loader rule
 
 ```javascript
 module.exports = {
@@ -253,7 +253,7 @@ module.exports = {
 
 - `$ npm install @babel/core babel-loader @babel/preset-env @babel/plugin-proposal-class-properties --save-dev` install packages babel
 
-- _src/components/button.js_ update code
+- "_src/components/button.js_" update code
 
 ```javascript
 class Buttons {
@@ -272,7 +272,7 @@ class Buttons {
 }
 ```
 
-- _webpack.config.js_ added js rule
+- "_webpack.config.js_" added js rule
 
 ```javascript
 module.exports = {
@@ -298,7 +298,7 @@ module.exports = {
 
 - `$ npm install terser-webpack-plugin --save-dev` webpack plugin install
 
-- _webpack.config.js_ update codes
+- "_webpack.config.js_" update codes
 
 ```javascript
 const TerserPlugin = require("terser-webpack-plugin"); // added
@@ -310,13 +310,13 @@ module.exports = {
 }
 ```
 
-- `$ npm run build` see _dist/bundle.js_ size 17kb switch 6kb
+- `$ npm run build` see "_dist/bundle.js_" size 17kb switch 6kb
 
 ## Lesson 7 (Extracting CSS into a separate Bundle)
 
 - `$ npm install mini-css-extract-plugin --save-dev` install extract css plugin
 
-- _webpack.config.js_ updated code add plugin
+- "_webpack.config.js_" updated code add plugin
 
 ```javascript
 const MiniCssExtractPlugin = require("mini-css-extract-plugin") // added
@@ -333,7 +333,7 @@ module.exports = {
 
 - `$ touch src/components/heading.js src/components/heading.scss` create new component files
 
-- _heading.js_ ;
+- "_heading.js_" ;
 
 ```javascript
 import "./heading.scss"; // import scss file
@@ -349,7 +349,7 @@ class Heading {
 export default Heading;
 ```
 
-- _heading.scss_ ;
+- "_heading.scss_" ;
 
 ```scss
 $colored: #f85;
@@ -359,7 +359,7 @@ h1 {
 }
 ```
 
-- _index.js_ imported heading.js files
+- "_index.js_" imported heading.js files
 
 ```javascript
 import Button from "./components/button";
@@ -375,7 +375,7 @@ btn.render();
 
 ## Lesson 8 (Browser caching and clean dist folder generated bundle)
 
-- _webpack.config.js_ updated code
+- "_webpack.config.js_" updated code
 
 ```javascript
 module.exports = {
@@ -396,7 +396,7 @@ module.exports = {
 
 - `$ npm install clean-webpack-plugin --save-dev`
 
-- _webpack.config.js_ update code
+- "_webpack.config.js_" update code
 
 ```javascript
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');; // added
@@ -414,7 +414,7 @@ module.exports = {
 
 - `$ npm install html-webpack-plugin --save` install plugin
 
-- _webpack.config.js_ update
+- "_webpack.config.js_" update
 
 ```javascript
 const HtmlWebpackPlugin = require('html-webpack-plugin');; // added
@@ -436,4 +436,30 @@ module.exports = {
 
 > **NOTE** publicPath file path on the server side does not work, we will address this problem in future tutorials. For now, run without a server.
 
-## Lesson
+## Lesson 10 (production - development mode)
+
+- "_webpack.config.js_" rename "_webpack.prod.config.js_
+
+- "_webpack.dev.config.js_" create new config file and "_webpack.prod.config.js_" inside all code copied after paste "_webpack.dev.config.js_
+
+- "_webpack.prod.config.js_" change mode "none" to "production"
+
+- "_webpack.dev.config.js_" change mode "none" to "development"
+
+- "_webpack.prod.config.js_" removed TerserPlugin all
+
+- "_webpac.dev.config.js_" removed all [contenthash] , TerserPlugin and MiniCssExtractPlugin (with rules loader change 'style-loader')
+
+- "_package.json_" change script properties
+
+```json
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config=webpack.prod.config.js",
+    "dev": "webpack --congif=webpack.dev.js"
+  }
+}
+```
+
+- `$ npm run build` or `$ npm dev`
