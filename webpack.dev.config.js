@@ -9,9 +9,14 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "./"
+    publicPath: "/"
   },
   mode: "development",
+  devServer: {
+    contentBase: path.resolve(__dirname, "./dist"),
+    index: "index.html",
+    port: 9000
+  },
   module: {
     rules: [{
       test: /\.(png|jpg)$/,

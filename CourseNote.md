@@ -463,3 +463,26 @@ module.exports = {
 ```
 
 - `$ npm run build` or `$ npm dev`
+
+## Lesson 11 (devServer - webpack-dev-server- live development)
+
+- `$ npm install webpack-dev-server --save-dev`
+
+- "_webpack.dev.config.js_" added devServer properties
+
+```javascript
+module.exports = {
+  ...
+  devServer: {
+    contentBase: path.resolve(__dirname, "./dist"),
+    index: "index.html",
+    port: 9000
+  },
+}
+```
+
+> **NOTE** change publicPath "./" to "/"
+
+- "_package.json_" change scripts in dev properties value to "webpack-dev-server --config=webpack.dev.config.js --hot"
+
+- `$ npm run dev` live server working
