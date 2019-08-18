@@ -409,3 +409,31 @@ module.exports = {
 ```
 
 - `$ npm run build`
+
+## Lesson 9 (Generate html file plugin )
+
+- `$ npm install html-webpack-plugin --save` install plugin
+
+- _webpack.config.js_ update
+
+```javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin');; // added
+module.exports = {
+  output:{
+    ...
+    publicPath: "./" // change publicPath empty
+  }
+  ...
+  plugins: [
+    new HtmlWebpackPlugin(
+      template: "./index.html",
+    )
+  ]
+}
+```
+
+- `$ npm run build` generate index.html file
+
+> **NOTE** publicPath file path on the server side does not work, we will address this problem in future tutorials. For now, run without a server.
+
+## Lesson
